@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <Filme nome="Homem de aco" genero="acao" ano='2015' nota='4' />
+    <Filme nome="" genero="acao" ano='2015' nota='4' />
+    <Filme nome="Homem de aco" genero="acao" ano='2015' nota='4' />
+    
+</dataset>

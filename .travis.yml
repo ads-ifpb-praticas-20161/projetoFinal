@@ -1,0 +1,17 @@
+language: java
+jdk:
+  - oraclejdk8
+
+branches:
+  only:
+    bjose
+
+install: mvn install -U -DskipTests=true
+script:
+  # mvn integration-test verify -Ptest
+deploy:
+  provider: heroku
+  api_key:
+    secure: "0b668955-5a50-4267-956a-1fb308adc561" # API Key, encontrado em Account Settings
+  on: bjose # Configuração de branch
+  app: sisfilme # Nome da app no Heroku

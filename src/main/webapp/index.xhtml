@@ -30,7 +30,7 @@
 
                     <div class="form-group" >
                         <label  class="col-sm-1 control-label" for="genero" >Gênero</label>
-                        <h:selectOneMenu value="#{controladorCadastroFilme.filme.genero}" style="background-color: #eb9316; width: 15%; height: 40px">
+                        <h:selectOneMenu name="genero" value="#{controladorCadastroFilme.filme.genero}" style="background-color: #eb9316; width: 15%; height: 40px" >
                             <f:selectItem itemValue="Ação" itemLabel="Ação" />
                             <f:selectItem itemValue="Drama" itemLabel="Drama" />
                             <f:selectItem itemValue="Ficção Científica" itemLabel=" Ficção Científica" />
@@ -40,7 +40,7 @@
                     <div class="form-group" >
                         <label  class="col-sm-1 control-label" for="nota" >Nota</label>
                         <div class="form-group" >
-                            <h:selectOneRadio value="#{controladorCadastroFilme.filme.nota}"  >
+                            <h:selectOneRadio name="nota" value="#{controladorCadastroFilme.filme.nota}"  >
                                 <samp>1 2 3 4 5 </samp>
                                 <f:selectItem   itemValue="1" class="label label-danger it"  />
                                 <f:selectItem itemValue="2" class="label label-danger it"/>
@@ -53,7 +53,7 @@
                     <!-- Text input-->
 
                     <div class="form-group">
-                        <h:commandButton action="#{controladorCadastroFilme.salvar()}" value="Cadastrar" styleClass="btn btn-success" />
+                        <h:commandButton nome="salvar" action="#{controladorCadastroFilme.salvar()}" value="Cadastrar" styleClass="btn btn-success" />
                     </div>
 
                 </fieldset>
