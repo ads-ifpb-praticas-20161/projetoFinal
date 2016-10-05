@@ -1,0 +1,69 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="template/default_layout.xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="content">
+
+        <div class="container-fluid">
+            <h:outputScript name="voto.js" library="js"></h:outputScript>
+            <h:form>
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>deixe sua alaliação de um filme</legend>
+
+                    <!-- Text input-->
+
+                    <div class="form-group " rows="4">
+                        <label class="col-sm-4 control-label" for="nome">Nome</label>
+                        <h:inputText value="#{controladorCadastroFilme.filme.nome}" id="nome" name="nome" class="form-control input-md" required="true" />
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="ano">Ano</label>
+                        <h:inputText value="#{controladorCadastroFilme.filme.ano}" id="ano"
+                                     name="ano"  class="form-control input-md" required="true"  >
+                            <f:validator validatorId="Anovalidado"> </f:validator>
+                        </h:inputText> 
+                            
+                    </div>
+
+                    <div class="form-group" >
+                        <label  class="col-sm-1 control-label" for="genero" >Gênero</label>
+                        <h:selectOneMenu value="#{controladorCadastroFilme.filme.genero}" style="background-color: #eb9316; width: 15%; height: 40px">
+                            <f:selectItem itemValue="Ação" itemLabel="Ação" />
+                            <f:selectItem itemValue="Drama" itemLabel="Drama" />
+                            <f:selectItem itemValue="Ficção Científica" itemLabel=" Ficção Científica" />
+                        </h:selectOneMenu>
+                    </div>
+
+                    <div class="form-group" >
+                        <label  class="col-sm-1 control-label" for="nota" >Nota</label>
+                        <div class="form-group" >
+                            <h:selectOneRadio value="#{controladorCadastroFilme.filme.nota}"  >
+                                <samp>1 2 3 4 5 </samp>
+                                <f:selectItem   itemValue="1" class="label label-danger it"  />
+                                <f:selectItem itemValue="2" class="label label-danger it"/>
+                                <f:selectItem   itemValue="3" class="label label-danger it" />
+                                <f:selectItem   itemValue="4" class="label label-danger it" />
+                                <f:selectItem   itemValue="5" class="label label-danger it" />
+                            </h:selectOneRadio>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+
+                    <div class="form-group">
+                        <h:commandButton action="#{controladorCadastroFilme.salvar()}" value="Cadastrar" styleClass="btn btn-success" />
+                    </div>
+
+                </fieldset>
+            </h:form>
+        </div>
+        <script>
+
+        </script>
+    </ui:define>
+    <ui:define name="footer">
+        JSF
+    </ui:define>
+</ui:composition>
